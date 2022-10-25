@@ -1,0 +1,35 @@
+Questions of Lab 11-01
+1. Mã độc drop gì vào ổ đĩa
+Mã độc drop vào ổ đĩa một tệp gina.dll.
+
+2. Làm cách nào mã độc đạt được sự duy trì 
+Mã độc đạt được sự duy trì của nó bằng cách tạo Register Key trong đường dẫn HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\GinaDLL với giá trị C:\Users\Administrator\Desktop\Practical Malware Analysis Labs\BinaryCollection\Chapter_11L\msgina32.dll.
+Với cách này thì mã độc sẽ được khởi chạy khi Winlogon tải dll trong quá trình đăng nhập vào Windows Server 2008.
+
+3. Mã độc đánh cắp thông tin đăng nhập của người dùng như thế nào
+Mã độc đánh cắp thông tin đăng nhập của người dùng bằng cách chặn bắt thông tin xác thực trong hệ thống GINA Interception.
+
+4. Mã độc làm gì với thông tin đăng nhập đã đánh cắp
+Thông tin đăng nhập được lưu trữ trong tệp C:\Windows\system32\msutil32.sys
+
+5. Làm thế nào bạn có thể sử dụng mã độc để lấy thông tin đăng nhập của người dùng từ máy ảo của bạn
+Sau khi khởi động lại máy Windows Server 2008 và đăng nhập lại, ta thấy username và password được lưu lại trong tệp C:\Windows\system32\msutil32.sys
+
+
+
+Questions of Lab 12-01
+1. Điều gì xảy ra khi bạn thực thi mã độc 
+Sau khi chạy tệp thực thi mã độc, ta thấy xuất hiện cửa sổ thông báo:
+Practical Malware Analysis 0
+Press OK to reboot
+
+Sau khoảng 1p, ta thấy xuất hiện tiếp hộp thông báo Practical Malware Analysis 1, Practical Malware Analysis 2, Practical Malware Analysis 3,...
+
+2. Tiến trình nào được tiêm
+Tiến trình bị tiêm là explorer.exe
+
+3. Làm thế nào để làm cho mã độc dừng cửa sở thông báo bật lên
+Khi mã độc hoạt động trong 1 Thread, ta có thể tìm được ID của Thread và kill nó. Khi đó mã độc không duy trì được và stop các cửa sổ thông báo bật lên.
+
+4. Mã độc hoạt động như thế nào
+Mã độc đã thực hiện inject dll vào tiến trình explorer.exe để chạy Lab12-01.dll cùng process này. Khi Lab12-01.dll được chạy thì cửa sổ thông báo sẽ được bật lên.

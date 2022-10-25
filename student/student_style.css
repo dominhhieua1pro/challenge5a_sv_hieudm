@@ -1,0 +1,432 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Sidebar part */
+
+.sidebar{
+    height: 100%; 
+    width: 180px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #041338;
+    overflow-x: hidden; 
+    font-size: 16px;
+	box-shadow: 2px 2px 4px #041338;
+}
+
+img.avatar {
+	height: 64px;
+	width: 64px;
+	border-radius: 50%;
+	cursor: pointer;
+	transform: translateY(30%);
+	padding: 0 60px;
+}
+
+.sidebar .menu{
+	margin-top: 0px;
+}
+
+.sidebar .menu li{
+    list-style-type: none;
+	display: flex;
+	justify-content: center;
+	width: 100%;	
+}
+
+.sidebar .menu li a{
+    display: block;
+    padding: 20px 0;
+    text-decoration: none;
+    color: #0097e6;
+    text-align: center;
+	flex: 1;
+}
+
+.sidebar .menu li:first-child i, .sidebar .menu li:first-child span{
+	color: #0097e6;
+}
+
+.sidebar .menu li a:hover{
+    background-color: #e6e6ff;
+	color: #192a56;
+}
+
+.sidebar .menu li:first-child a:hover{
+	background-color: inherit!important;
+}
+
+.sidebar .menu li:nth-child(2) a:hover{
+	background-color: inherit!important;
+	color: #0097e6!important;
+}
+
+.darkblue{
+    background-color: #71deff!important;
+	color: #192a56!important;
+	opacity: 100%;
+}
+
+/* Student part */
+
+.content{
+    margin-left: 180px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 100vh;
+    background: #d1ebe6;
+}
+
+.username-readonly,
+.name-readonly {
+    box-shadow: none!important;
+    background-color: #d7dadb;
+}
+
+.content form{
+	width: 30%;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.content p{
+	font-size: 28px!important;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	text-align: center;
+    line-height: 36px;
+}
+
+form.asgm-upload {
+    top: 40%;
+}
+
+p.changepwd-text {
+	margin-bottom: 28px;
+}
+
+.content label{
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+.content input[type="text"], .content input[type="password"]{
+	display: block;
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 4px;
+	margin-top: 8px;
+}
+
+.content input[type="text"]:focus,.content input[type="text"]:hover,
+.content input[type="password"]:focus,.content input[type="password"]:hover{
+	/* outline: none; */
+	box-shadow: 0px 0px 8px #888888;
+}
+
+.content input[type="submit"] {
+	border: none;
+	padding: 20px;
+	background: #192a56;
+	color: white;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 10px;
+    margin-top: 20px;
+	cursor: pointer;
+}
+
+.content form input[type="file"]{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+    top: 8px;
+}
+
+.content input[type="submit"]:hover{
+	box-shadow: 2px 2px 4px #192a56;
+}
+
+.content form a{
+	text-decoration: none;
+}
+
+.content form a:hover, .content form a:visited{
+	text-decoration: none;
+}
+
+.content[id='home']{
+	display: block;
+}
+
+.content .add{
+    padding: 15px;
+    background: #192a56;
+    color: white;
+    border: none;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	border-radius: 10px;
+	font-size: 16px;
+}
+
+.content .add:hover{
+	opacity: 0.8;
+}
+
+.content .students-list table, 
+.content .assignment-list table,
+.content .assignmentSubmitted-list table{
+	width: 100%;
+	position: relative;
+	top: 50px;
+}
+
+.content .students-list table, th, td, 
+.content .assignment-list table, th, td {
+    border-bottom: 2px solid black;
+    border-collapse: collapse;
+    background: none;
+    padding: 15px;
+	font-size: 16px;
+}
+
+.students-list__edit,
+.students-list__delete,
+.send-message,
+.assignment-list,
+.assignmentSubmitted-list {
+    text-decoration: none;
+}
+
+
+/* Add student form */
+
+.content .addition{
+	width: 30%;
+	text-align: center;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.content .addition p{
+	font-size: 28px!important;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+    /* width: 100%; */
+}
+
+.content .addition input[type="text"], .content .addition input[type="password"]{
+	display: block;
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+
+.content.addition input[type="text"]:focus,.content .addition input[type="text"]:hover,
+.content.addition input[type="password"]:focus,.content .addition input[type="password"]:hover{
+	/* outline: none; */
+	box-shadow: 0px 0px 8px #888888;
+}
+
+.content .addition input[type="submit"]{
+	border: none;
+	padding: 20px;
+	background: #192a56;
+	color: white;
+	margin: 0 auto;
+	border-radius: 10px;
+	cursor: pointer;
+	/* left: 15%; */
+	left: 0%;
+	transform: translateX(0%);
+}
+
+.content .addition input[type="submit"]:hover, .content .assignment input[type="submit"]:hover{
+	box-shadow: 2px 2px 4px #192a56;
+}
+
+.err{
+    color:  red!important;
+    font-size: small!important;
+	font-style: italic!important;
+	margin-bottom: 10px;
+}
+
+
+/* message */
+.container{
+    margin-left: 180px;
+    padding: 50px;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 100vh;
+	background: #cbcfef;
+	box-sizing: border-box;
+}
+
+.container .row{
+	margin-bottom: 22px;
+	box-sizing: border-box;
+}
+
+.container .row p{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.container .row:last-child{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.add{
+    padding: 15px;
+    background: #192a56;
+    color: white;
+    border: none;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+.add:hover {
+    opacity: 0.8;
+}
+
+.container .row input[type=text]{
+	width: 85%;
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	background-color: rgb(223, 129, 219);
+	color: white;
+	font-size: 18px;
+}
+
+.container .row input[type=text]:focus{
+	outline: none;
+	box-shadow: 2px 2px 4px #192a56;
+}
+
+.container .row input[type=submit]{
+	border: none;
+	background-color: none;
+	padding: 10px;
+	/* margin: 10px; */
+	border-radius: 10px;
+    /* width: 60px; */
+    cursor: pointer;
+}
+
+.container .row input[type=submit]:hover{
+	outline: none;
+	box-shadow: 2px 2px 4px #192a56;
+}
+
+.type-msg {
+    margin-right: 16px;
+}
+
+.type-msg ::placeholder {
+    color: rgb(224, 224, 224);
+}
+
+.msg-edit {
+    margin: 0 14px;
+    cursor: pointer;
+    width: 60px;
+}
+
+.msg-delete {
+    width: 80px;
+    cursor: pointer;
+     
+}
+
+.msg-send {
+    width: 154px;
+    margin: 0 10px;
+}
+
+/* assignment */
+
+.content .assignment {
+	width: 30%;
+	margin: 50px auto;
+	padding: 30px;
+	border: 2px solid #555;
+	left: 0;
+	top: -2%;
+	transform: translate(0);
+	background-color: #999edc;
+	border-radius: 8px;
+}
+
+.content .assignment input[type="file"] {
+	border: none;
+	padding: 5px 10px;
+}
+
+.content .assignment input[type="submit"] {
+	border: none;
+	padding: 16px;
+	border-radius: 8px;
+	background: #192a56;
+	color: white;
+}
+
+.assignment-list {
+	overflow-y: scroll;
+	/* height: 300px; */
+	font-size: 16px!important;
+	height: 680px;
+	width: 100%;
+}
+
+.assignmentSubmitted-list {
+	overflow-y: scroll;
+	/* height: 300px; */
+	font-size: 14px!important;
+	height: 190px;
+	width: 100%;
+	margin-top: 60px;
+	height: 630px;
+}
+
+.content .assignmentSubmitted-list table, th, td {
+	border-bottom: 2px solid black;
+    border-collapse: collapse;
+    background: none;
+    padding: 15px;
+	font-size: 16px;
+	margin-top: -68px;
+}
+
+textarea#description,
+textarea#hint {
+	margin-top: -8px;
+}
