@@ -16,23 +16,25 @@ if(isset($_GET["id"])){
     }
 }
 
+$flag = false;
 if(isset($_POST["submit"])){
     $result_chall = $_POST["result"];
     $folder = "../challenge/";
     $list = scandir($folder);
     $len = count($list);
     for ($i=0 ; $i < $len ; $i++ ) { 
-        // echo $list[$i];
-        // echo $title;
         $arr = explode('.',$list[$i]);
-        if($title == $arr[0] && $arr[1] == $result_chall){
+        if($result_chall == $arr[1] && $title == $arr[0]){
             header("location: ./challenge_result.php?challenge-id=".$chall_id."&file-name=".$list[$i]."");
+            $flag = true;
             exit();
-        }else{
+        }
+    }
+    
+    if(!$flag){
             $err = "*Wrong answer!";
             echo "<script type='text/javascript'>alert('$err'); window.location.href='challenge_detail.php?id='+$chall_id</script>";
             // header("location:challenge_detail.php?id=".$chal_id);
-        }
     }
 }
 
