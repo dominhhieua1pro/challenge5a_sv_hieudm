@@ -71,9 +71,7 @@ if(isset($_POST["addition"])){
         $count = $result->num_rows;
         if($count==0){
             // insert to database
-            $sql = "INSERT INTO tbluser(username, password, pos, name, pnumber, email) VALUES (
-                '$username', '$password_encrypted', '$pos', '$name', '$phonenumber', '$email'
-            )";
+            $sql = "INSERT INTO `tbluser` (`username`, `password`, `pos`, `name`, `pnumber`, `email`, `avatar`) VALUES ('$username', '$password_encrypted', '$pos', '$name', '$phonenumber', '$email', 'default-avatar.png')";
             if($conn->query($sql) == true){
                 $err = "Add student successfully!";
                 echo "<script type='text/javascript'>alert('$err'); window.location='student_show.php';</script>";
